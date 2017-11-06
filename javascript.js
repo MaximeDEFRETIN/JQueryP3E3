@@ -9,14 +9,19 @@ $(function(){
     //On sélectionne l'input #texte
     var value = $('#texte').val();
     //On utilise les conditions
-    if(value < number){
-      alert('Le chiffre est plus grand');
+    if(isNaN(value)==false){
+      if(value < number){
+        alert('Le chiffre est plus grand');
+      }
+      else if (value > number) {
+        alert('Le chiffre est plus petit');
+      }
+      else if (value == number) {
+        alert('C\'est exacte. Vous avez fait ' + add + ' tentative(s).');
+      }
     }
-    else if (value > number) {
-      alert('Le chiffre est plus petit');
-    }
-    else if (value == number) {
-      alert('C\'est exacte. Vous avez fait ' + add + ' tentative(s).');
+    else {
+      alert('Saisissez un nombre !');
     }
   });
 });
